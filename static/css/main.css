@@ -4,22 +4,33 @@ body {
     height: 3696px;
     color: #000000;
     font-family: Montserrat;
-    overflow-x: hidden;
     font-style: normal;
 }
 
-.header {
-    width: 960px;
-    height: 1046px;
-}
-
-.centered-text {
+li a {
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 29px;
     text-align: center;
+    text-decoration: none;
+    color: black !important;
 }
 
-.header-photo {
-    margin-top: 0px;
-    float: left;
+li a:hover {
+    color: green !important;
+}
+
+table {
+    border: none;
+}
+
+button {
+    padding: 5px;
+    border-radius: 5px;
+    margin-top: 5px;
+    border: 0px;
+    color: white;
+    background-color: rgb(193, 51, 35);
 }
 
 .headline-text {
@@ -41,36 +52,13 @@ body {
     padding: 20px;
 }
 
-.backgroundecor {
-    margin-top: -120px;
-    margin-left: -10px;
-    position: absolute;
-    z-index: -1;
-}
-
 .navbar-pos {
-    list-style-type: none;
-    text-decoration: none;
     color: black;
-    float: center;
     position: absolute;
     width: 500px;
     height: 58px;
     left: 1215px;
     top: 45px;
-}
-
-li a {
-    font-weight: 500;
-    font-size: 24px;
-    line-height: 29px;
-    text-align: center;
-    text-decoration: none;
-    color: black !important;
-}
-
-li a:hover {
-    color: green !important;
 }
 
 .header-info {
@@ -79,16 +67,7 @@ li a:hover {
     top: 400px;
 }
 
-.new-text {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 1920px;
-    height: 117px;
-}
-
 .ai-pic {
-    display: block;
     overflow: hidden;
     margin-left: auto;
     margin-right: auto;
@@ -102,6 +81,13 @@ li a:hover {
     margin-left: auto;
     margin-right: auto;
     width: 50%;
+}
+
+.backgroundecor {
+    margin-top: -160px;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
 }
 
 .database {
@@ -118,17 +104,17 @@ li a:hover {
     font-size: 24px;
 }
 
-table {
-    border: none;
-}
-
-button {
-    margin-top: 10px;
-}
-
 .rating {
-    margin-top: 20px;
+    margin-top: 60px;
     margin-left: 300px;
     width: 50%;
     height: auto;
+}
+
+.submit-button {
+    padding: 5px;
+    border-radius: 5px;
+    border: 0px;
+    color: white;
+    background-color: rgb(97, 174, 86);
 }

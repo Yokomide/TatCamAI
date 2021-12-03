@@ -1,9 +1,7 @@
 from flask import Flask, render_template, request, Response
 from flask_mysqldb import MySQL
 import yaml
-import numpy as np
 import cv2
-import tensorflow as tf
 
 
 app = Flask(__name__)
@@ -20,17 +18,6 @@ sub = cv2.createBackgroundSubtractorMOG2()  # create background subtractor
 
 @app.route('/', methods=['GET', 'POST'])
 def index():
-    """
-    if request.method == 'POST':
-        userDetails = request.form
-        position = userDetails['position']
-        trashfull = userDetails['trashfull']
-        folder_id = userDetails['folder_id']
-        cur = mysql.connection.cursor()
-        cur.execute("INSERT INTO tatcamerstats(position, trashfull, folder_id) VALUES(%s, %s, %s)",(position, trashfull, folder_id))
-        mysql.connection.commit()
-        cur.close()
-        """
     return render_template("index.html", data=[{'id': '1'}])
 
 @app.route('/get-text', methods=['GET', 'POST'])
@@ -65,10 +52,8 @@ def foo3():
             statDetails = cur.fetchall()
     return render_template("index.html",ratingDetails=statDetails,tableCount=tableCount)
 
-#Тестовый, простенький ИИ по отслеживанию движения с видео и выводом на сайт.
-
 def gen():
-    """Video streaming generator function."""
+ 
 
     img = cv2.imread("pic.png")
     img = cv2.resize(img, (0,0), fx=0.5, fy=0.5) 
@@ -76,7 +61,6 @@ def gen():
     yield (b'--frame\r\n'b'Content-Type: image/png\r\n\r\n' + frame + b'\r\n')
    
         
-
 @app.route('/video_feed')
 def video_feed():
     return Response(gen(),
