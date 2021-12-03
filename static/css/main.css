@@ -116,3 +116,7 @@ li a:hover {
 table {
     border: none;
 }
+
+button {
+    margin-top: 10px;
+}

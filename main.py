@@ -45,6 +45,15 @@ def foo():
             camDetails = cur.fetchmany()
     return render_template("index.html", userDetails=camDetails,tableCount=tableCount)
 
+@app.route('/get-all', methods=['GET', 'POST'])
+def foo2():
+    tableCount = request.form.get('allcams')
+    cur = mysql.connection.cursor()
+    resultValue = cur.execute("SELECT * FROM tatcamerstats")
+    
+    if resultValue > 0:
+            camDetails = cur.fetchall()
+    return render_template("index.html", userDetails=camDetails,tableCount=tableCount)
 
 #Тестовый, простенький ИИ по отслеживанию движения с видео и выводу
 
