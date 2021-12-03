@@ -13,9 +13,10 @@
 
 <body>
 
+
     <div class="header">
 
-        <img class="header-photo" src="/static/image/main_pic.png">
+        <img src="/static/image/main_pic.png">
         <nav class="navbar navbar-expand-sm navbar-pos">
             <div class="container-fluid">
                 <ul class="navbar-nav">
@@ -33,38 +34,25 @@
         </nav>
 
         <div class=" header-info">
-            <p class="headline-text">TatCam</p>
+            <img width="500px" src="/static/image/logo.png">
             <p class="underheader-text">Камеры с искусственным интеллектом в республике Татарстан</p>
         </div>
 
 
     </div>
-
+    <img class="backgroundecor " src="/static/image/strips.png ">
     </div>
 
 
-    <p class=" headline-text new-text centered-text " id="cams">Камеры</p>
-    <div class="ai-pic ">
+    <p class=" container headline-text" id="cams">Камеры</p>
+    <div class="container ai-pic ">
         <img src="{{ url_for( 'video_feed') }} ">
     </div>
 
-    <!--<img class="backgroundecor " src="/static/image/strips.png ">-->
 
-    <div class="database ">
+
+    <div class="database">
         <p class="stat-headline">Статистика</p>
-
-        <!--
-        <form method="POST" action=" ">
-            Позиция <input type="text " name="position" />
-            <br> Заполненность <input type="text " name="trashfull" />
-            <br> Папка <input type="number " name="folder_id" />
-            <input type="submit">
-        </form>
-    -->
-
-
-
-
 
         <form method="POST" action="/get-text">
 

@@ -42,9 +42,10 @@ body {
 }
 
 .backgroundecor {
+    margin-top: -120px;
     margin-left: -10px;
     position: absolute;
-    margin-top: -240px;
+    z-index: -1;
 }
 
 .navbar-pos {
@@ -79,6 +80,9 @@ li a:hover {
 }
 
 .new-text {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
     width: 1920px;
     height: 117px;
 }
