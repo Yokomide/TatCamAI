@@ -4,6 +4,7 @@ body {
     height: 3696px;
     color: #000000;
     font-family: Montserrat;
+    overflow-x: hidden;
     font-style: normal;
 }
 
@@ -119,4 +120,11 @@ table {
 
 button {
     margin-top: 10px;
+}
+
+.rating {
+    margin-top: 20px;
+    margin-left: 300px;
+    width: 50%;
+    height: auto;
 }

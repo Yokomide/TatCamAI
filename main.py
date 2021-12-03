@@ -55,7 +55,17 @@ def foo2():
             camDetails = cur.fetchall()
     return render_template("index.html", userDetails=camDetails,tableCount=tableCount)
 
-#Тестовый, простенький ИИ по отслеживанию движения с видео и выводу
+
+@app.route('/get-rating', methods=['GET', 'POST'])
+def foo3():
+    tableCount = request.form.get('ratings')
+    cur = mysql.connection.cursor()
+    resultValue = cur.execute("SELECT rating.service, rating.area, A.Count FROM rating LEFT JOIN (SELECT *, COUNT(trashfull) AS Count FROM tatcamerstats WHERE trashfull = 'YES' GROUP BY street) AS A ON A.street = rating.area ORDER BY A.Count ASC;")
+    if resultValue > 0:
+            statDetails = cur.fetchall()
+    return render_template("index.html",ratingDetails=statDetails,tableCount=tableCount)
+
+#Тестовый, простенький ИИ по отслеживанию движения с видео и выводом на сайт.
 
 def gen():
 
