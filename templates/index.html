@@ -22,9 +22,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#cams">Камеры</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">О нас</a>
-                    </li>
                 </ul>
             </div>
         </nav>
@@ -45,22 +42,22 @@
 
     <div class="database">
         <p class="stat-headline">Статистика</p>
-
+        <p>Выделяются заполненные контейнеры</p>
         <form method="POST" action="/get-text">
             <label>Выберите камеру: </label>
             <select name="cams">
-              <option value="{{1}}" type="text">Альметьевск; Шевченко 80</option>
-              <option value="{{2}}" type="text">Альметьевск; Белоглазова 131</option>
-              <option value="{{3}}" type="text">Альметьевск; Белоглазова 151</option>
-              <option value="{{4}}" type="text">Альметьевск; Гафиатуллина 29Б</option>
-              <option value="{{5}}" type="text">Альметьевск; Гафиатуллина 39</option>
-              <option value="{{6}}" type="text">Альметьевск; Гафиатуллина 45</option>
-              <option value="{{7}}" type="text">Альметьевск; Гафиатуллина 47 (1)</option>
-              <option value="{{8}}" type="text">Альметьевск; Гафиатуллина 47 (2)</option>
-              <option value="{{9}}" type="text">Альметьевск; Ленина 66</option>
-              <option value="{{10}}" type="text">Альметьевск; Ленина 90</option>
-              <option value="{{11}}" type="text">Альметьевск; Строителей 20Б</option>
-              <option value="{{12}}" type="text">Альметьевск; Строителей 20А</option>
+              <option value="{{1}}" type="text" {% if tableCount =="1" %} selected {% endif %}>Альметьевск; Шевченко 80</option>
+              <option value="{{2}}" type="text" {% if tableCount =="2" %} selected {% endif %}>Альметьевск; Белоглазова 131</option>
+              <option value="{{3}}" type="text" {% if tableCount =="3" %} selected {% endif %}>Альметьевск; Белоглазова 151</option>
+              <option value="{{4}}" type="text" {% if tableCount =="4" %} selected {% endif %}>Альметьевск; Гафиатуллина 29Б</option>
+              <option value="{{5}}" type="text" {% if tableCount =="5" %} selected {% endif %}>Альметьевск; Гафиатуллина 39</option>
+              <option value="{{6}}" type="text" {% if tableCount =="6" %} selected {% endif %}>Альметьевск; Гафиатуллина 45</option>
+              <option value="{{7}}" type="text" {% if tableCount =="7" %} selected {% endif %}>Альметьевск; Гафиатуллина 47 (1)</option>
+              <option value="{{8}}" type="text" {% if tableCount =="8" %} selected {% endif %}>Альметьевск; Гафиатуллина 47 (2)</option>
+              <option value="{{9}}" type="text" {% if tableCount =="9" %} selected {% endif %}>Альметьевск; Ленина 66</option>
+              <option value="{{10}}" type="text" {% if tableCount =="10" %} selected {% endif %}>Альметьевск; Ленина 90</option>
+              <option value="{{11}}" type="text" {% if tableCount =="11" %} selected {% endif %}>Альметьевск; Строителей 20Б</option>
+              <option value="{{12}}" type="text" {% if tableCount =="12" %} selected {% endif %}>Альметьевск; Строителей 20А</option>
             </select>
             <br><br>
             <input class="submit-button" type="submit" value=" Подтвердить ">
@@ -68,6 +65,10 @@
 
         <form method="POST" action="/get-all">
             <button name="allcams"> Вывести всё </button>
+        </form>
+
+        <form method="POST" action="/get-man">
+            <button> Поиск людей </button>
         </form>
 
         <table class="table table-striped">
@@ -117,7 +118,6 @@
             {% endfor %}
         </table>
     </div>
-
 
 </body>
 

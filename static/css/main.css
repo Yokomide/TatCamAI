@@ -57,7 +57,7 @@ button {
     position: absolute;
     width: 500px;
     height: 58px;
-    left: 1215px;
+    left: 1280px;
     top: 45px;
 }
 
@@ -80,7 +80,7 @@ button {
     display: block;
     margin-left: auto;
     margin-right: auto;
-    width: 50%;
+    width: 80%;
 }
 
 .backgroundecor {
