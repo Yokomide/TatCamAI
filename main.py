@@ -1,4 +1,4 @@
-from flask import Flask, render_template, request, Response, redirect
+from flask import Flask, render_template, request, Response
 from flask_mysqldb import MySQL
 import yaml
 import cv2
@@ -16,8 +16,9 @@ mysql = MySQL(app)
 
 sub = cv2.createBackgroundSubtractorMOG2()  # create background subtractor
 
-pic = 2
+pic = 1
 n = 1
+
 @app.route('/', methods=['GET', 'POST'])
 def index():
     global n
@@ -69,6 +70,7 @@ def gen2():
     img = cv2.resize(img, (0,0), fx=0.5, fy=0.5) 
     frame = cv2.imencode('.jpg', img)[1].tobytes()
     yield (b'--frame\r\n'b'Content-Type: image/jpg\r\n\r\n' + frame + b'\r\n')
+
 
 
 @app.route('/get-all', methods=['GET', 'POST'])
